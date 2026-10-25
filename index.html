@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>SlideCraft AI — Presentasi akademik yang terasa manusiawi</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">S</span><span>SlideCraft <em>AI</em></span></a>
+    <span class="top-note"><span class="status-dot"></span> Prototype · Academic Studio</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">PRESENTATION WORKSPACE</div>
+      <h1>Presentasi yang rapi.<br><span>Isi yang tetap punya suara.</span></h1>
+      <p>Susun presentasi akademik dari materi sendiri, gunakan template Canva dalam format PPTX, lalu lanjutkan penyuntingan di PowerPoint.</p>
+      <div class="hero-tags"><span>✦ Bahasa natural</span><span>▤ PPTX editable</span><span>◎ Sumber terjaga</span></div>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div><div class="step-label">01 / BRIEF</div><h2>Mulai dari ide kamu</h2></div>
+        <div class="autosave"><span class="status-dot"></span> Draft lokal</div>
+      </div>
+
+      <form id="generator-form">
+        <div class="field">
+          <label for="topic">Topik presentasi <span class="required">*</span></label>
+          <textarea id="topic" name="topic" rows="2" required placeholder="Contoh: Analisis kadar parasetamol dalam sediaan tablet menggunakan spektrofotometri UV-Vis"></textarea>
+          <small>Gunakan judul atau pertanyaan utama yang jelas.</small>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label for="audience">Audiens</label>
+            <select id="audience" name="audience">
+              <option>Mahasiswa dan dosen</option>
+              <option>Seminar proposal / hasil</option>
+              <option>Praktikum laboratorium</option>
+              <option>Presentasi kelas</option>
+              <option>Konferensi ilmiah</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="slide_count">Jumlah slide</label>
+            <select id="slide_count" name="slide_count">
+              <option value="5">5 slide · singkat</option>
+              <option value="8" selected>8 slide · standar</option>
+              <option value="10">10 slide · lengkap</option>
+              <option value="12">12 slide · mendalam</option>
+              <option value="15">15 slide · seminar</option>
+              <option value="20">20 slide · panjang</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="style">Arah visual</label>
+          <div class="style-options">
+            <label class="style-card selected"><input type="radio" name="style" value="Akademik modern" checked><span class="swatch swatch-sage"></span><b>Academic</b><small>Bersih & terstruktur</small></label>
+            <label class="style-card"><input type="radio" name="style" value="Editorial minimalis"><span class="swatch swatch-cream"></span><b>Editorial</b><small>Minimal & estetik</small></label>
+            <label class="style-card"><input type="radio" name="style" value="Profesional formal"><span class="swatch swatch-navy"></span><b>Professional</b><small>Formal & tegas</small></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label-line"><label for="source_file">Materi sumber <span class="optional">OPSIONAL, TAPI DISARANKAN</span></label></div>
+          <label class="upload-zone" for="source_file" id="source-drop">
+            <span class="upload-icon">↑</span><span class="upload-copy"><b>Unggah materi kuliah atau catatan</b><small>TXT, MD, DOCX, atau PPTX · isi menjadi acuan AI</small></span><span class="choose-file">Pilih file</span>
+          </label>
+          <input class="hidden-file" type="file" id="source_file" name="source_file" accept=".txt,.md,.docx,.pptx">
+          <small>Prototipe ini belum mendukung PDF. Jangan unggah dokumen rahasia atau data pribadi.</small>
+        </div>
+
+        <div class="field">
+          <div class="label-line"><label for="template_file">Template Canva</label><span class="optional">PPTX</span></div>
+          <label class="upload-zone" for="template_file" id="template-drop">
+            <span class="upload-icon template-icon">▤</span><span class="upload-copy"><b>Gunakan desain template kamu</b><small>Unduh template dari Canva sebagai Microsoft PowerPoint (.pptx)</small></span><span class="choose-file">Pilih PPTX</span>
+          </label>
+          <input class="hidden-file" type="file" id="template_file" name="template_file" accept=".pptx">
+          <div class="template-tip"><span>✳</span><p><b>Tips agar desain tetap utuh</b><br>Untuk hasil terbaik, sisipkan placeholder <code>{{TITLE}}</code>, <code>{{BODY}}</code>, <code>{{NOTES}}</code>, <code>{{VISUAL}}</code>, atau <code>{{REFERENCES}}</code> pada kotak teks yang ingin diisi otomatis. Buat jumlah slide template sama dengan jumlah slide yang dipilih.</p></div>
+        </div>
+
+        <div class="field">
+          <label for="extra_instructions">Arahan tambahan <span class="optional">OPSIONAL</span></label>
+          <textarea id="extra_instructions" name="extra_instructions" rows="2" placeholder="Contoh: Jangan terlalu banyak teks. Sertakan tujuan, prinsip metode, pembahasan hasil, dan kesimpulan."></textarea>
+        </div>
+
+        <div class="integrity-note"><span class="integrity-icon">✓</span><p><b>Prinsip sumber yang jujur</b><br>AI diarahkan untuk tidak mengarang angka atau referensi. Jika materi kurang, bagian yang perlu dilengkapi akan ditandai untuk diperiksa.</p></div>
+        <button class="primary-btn" id="submit-btn" type="submit"><span>Susun presentasi</span><span class="arrow">↗</span></button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </section>
+
+    <aside class="side-panel">
+      <div class="preview-card">
+        <div class="preview-top"><span>YOUR WORKSPACE</span><span class="preview-menu">•••</span></div>
+        <div class="mini-slide">
+          <div class="mini-kicker">ACADEMIC PRESENTATION</div>
+          <div class="mini-title">Ideas into<br><i>impact.</i></div>
+          <div class="mini-rule"></div>
+          <div class="mini-footer"><span>SLIDECRAFT STUDIO</span><span>01 / 08</span></div>
+          <div class="mini-orb orb-one"></div><div class="mini-orb orb-two"></div>
+        </div>
+        <div class="preview-caption"><div><b>Template-led, not template-locked.</b><small>Konten mengikuti struktur desain yang kamu pilih.</small></div><span class="spark">✳</span></div>
+      </div>
+      <div class="workflow-card">
+        <div class="step-label">WORKFLOW</div>
+        <div class="workflow-step"><span class="number">01</span><div><b>Brief & sumber</b><small>Topik, audiens, materi</small></div><span class="check">✓</span></div>
+        <div class="workflow-step"><span class="number">02</span><div><b>Susun narasi</b><small>Alur yang logis dan natural</small></div><span class="step-dot"></span></div>
+        <div class="workflow-step"><span class="number">03</span><div><b>Isi template</b><small>Konten masuk ke PPTX</small></div><span class="step-dot"></span></div>
+        <div class="workflow-step"><span class="number">04</span><div><b>Review & ekspor</b><small>Periksa lalu presentasikan</small></div><span class="step-dot"></span></div>
+      </div>
+      <div class="disclaimer"><span>ⓘ</span><p>Ini prototipe awal. Selalu periksa hasil AI, format template, angka, dan referensi sebelum digunakan secara akademik.</p></div>
+    </aside>
+  </main>
+  <footer><span>SLIDECRAFT AI</span><span>Built for thoughtful presentations · v0.1</span></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
